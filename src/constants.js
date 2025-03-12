@@ -1,1 +1,1 @@
-ECHO is on.
+export const dbname = "cunt"
