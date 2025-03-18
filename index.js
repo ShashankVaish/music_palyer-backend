@@ -14,10 +14,10 @@
 
 
 import dotenv from 'dotenv';
-dotenv.config({ path: '/env' });
+dotenv.config();
 
-import connectdb from './src/models/index.js';
+import connectdb from './src/db/index.js';
 
 
-
+console.log("Current working directory:", process.cwd());
 connectdb()

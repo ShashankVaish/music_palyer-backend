@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
-  "author": "",
+  "author": "shashank",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index.js",  // This will load .env before running index.js
-    "dev": "nodemon -r dotenv/config index.js"  // This will start nodemon and load .env before running index.js
+    "start": "node -r dotenv/config index.js",  
+    "dev": "nodemon -r dotenv/config index.js" 
   },
   "dependencies": {
     "dotenv": "^16.4.7",
