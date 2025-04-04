@@ -99,4 +99,14 @@ userschema.methods.RefreshTokenGenerate  = function(){
     }
 )
 }
+userschema.methods.getinfo = function (){
+    return{
+        username: this.name,
+        fullname:this.fullname,
+        email:this.email,
+        ACCESS_TOKEN:this.ACCESS_TOKEN,
+        
+    }
+}
+
 export const User = mongoose.model('User',userschema)
