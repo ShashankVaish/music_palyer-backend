@@ -7,4 +7,4 @@ const asynchandler = (fn) => async (req,res,next)=>{
     }
 
 }
-export default asynchandlerj
+export default asynchandler
