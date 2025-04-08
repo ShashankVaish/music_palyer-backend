@@ -9,8 +9,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 
 
-
 // import the route from routes 
-import { Router } from "express"
-app.use('/users',)
+import router from "./routes/users.route.js"
+app.use('/api/v1/users',router)
 export {app}

@@ -12,6 +12,7 @@ const uploadFileCloudinary = async (filepath)=>{
         .upload(filepath,{
             resource_type: "auto"
         })
+        fs.unlinkSync(filepath)
         console.log("the file is upload in the cloudinary server ",response)
     } catch (error) {
         fs.unlinkSync(filepath)
