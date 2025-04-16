@@ -18,10 +18,7 @@ const generateRefreshtokenandAccesstoken = async (userid)=>{
     const RefreshToken = user.RefreshTokenGenerate(userid)
     user.RefreshToken = RefreshToken
     user.save({validateBeforeSave:false})
-    return {AccessToken,RefreshToken}
-
-    
-
+    return {AccessToken,RefreshToken} 
 }
 const registerhandle = asynchandler(async (req,res)=>{
     // res.status(200).json({msg:"succesfully run"})
@@ -84,14 +81,14 @@ const loginhandle = asynchandler(async (req,res)=>{
     // verify the credentail from database 
     // check the password 
     // generate the refreshtoeken and accesstoken
-    const {username,email,password} = req.body
-    if(username || email){
+    const { username , email , password } = req.body
+    console.log(username)
+    if(!username && !email){
         throw new ApiErrors(401,"please give the email or username")
     }
     const user = await User.findOne({$or:[{username},{email}]})
     if(!user){
         throw new ApiErrors(410,"Not found the user")
-
     }
     const passwordcheck = await user.isPasswordCorrect(password)
     if(!passwordcheck){
@@ -106,12 +103,6 @@ const loginhandle = asynchandler(async (req,res)=>{
     .json( new ApiResponse(200,{
         user: logginduser,RefreshToken,AccessToken
     }))
-
-
-    
-
-
-
 
 })
 export {registerhandle,loginhandle}
